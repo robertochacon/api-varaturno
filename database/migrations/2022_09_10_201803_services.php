@@ -19,6 +19,7 @@ class Services extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('entity_id')->nullable();
             $table->foreign('entity_id')->references('id')->on('entities');
+            $table->string('code')->nullable();
             $table->string('name')->nullable();
             $table->string('description')->nullable();
             $table->enum('status',['active','inactive'])->default('active');
