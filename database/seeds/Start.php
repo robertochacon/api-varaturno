@@ -33,6 +33,7 @@ class Start extends Seeder
             'code' => 'P1',
             'name' => 'Prueba 1',
             'description' => 'P1 description',
+            'color' => 'primary',
             'window' => '1'
         ]);
 

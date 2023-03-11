@@ -9,7 +9,7 @@ class Turns extends Model
     protected $table = 'turns';
 
     protected $fillable = [
-        'user_id','entity_id','identification','code','service','note','status',
+        'user_id','entity_id','identification','code','service','note','window','status',
     ];
 
 }
