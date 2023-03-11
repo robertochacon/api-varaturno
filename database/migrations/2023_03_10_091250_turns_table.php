@@ -23,7 +23,8 @@ class TurnsTable extends Migration
             $table->string('code')->nullable();
             $table->string('service')->nullable();
             $table->string('note')->nullable();
-            $table->enum('status',['active','inactive'])->default('active');
+            $table->string('window')->default('1')->nullable();
+            $table->enum('status',['call','wait','done','cancel'])->default('wait');
             $table->timestamps();
         });
     }

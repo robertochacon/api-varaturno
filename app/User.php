@@ -18,12 +18,12 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'entity_id', 'name', 'identification', 'password','email','phone','role',
+        'entity_id', 'name', 'identification', 'password','email','phone','window','role',
     ];
 
     public function entity()
     {
-    	return $this->belongsTo('App\Entitys', 'entity_id');
+    	return $this->belongsTo('App\Entities', 'entity_id');
     }
 
     /**

@@ -22,6 +22,8 @@ class Services extends Migration
             $table->string('code')->nullable();
             $table->string('name')->nullable();
             $table->string('description')->nullable();
+            $table->string('color')->nullable();
+            $table->string('window')->default('1')->nullable();
             $table->enum('status',['active','inactive'])->default('active');
             $table->timestamps();
         });

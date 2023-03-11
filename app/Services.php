@@ -10,7 +10,7 @@ class Services extends Model
     protected $table = 'services';
 
     protected $fillable = [
-        'user_id','entity_id','code','name', 'description','status',
+        'user_id','entity_id','code','name', 'description','color','window','status',
     ];
 
 }
