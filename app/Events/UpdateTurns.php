@@ -14,7 +14,7 @@ class UpdateTurns implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $turns;
+    public $msg;
 
     /**
      * Create a new event instance.
@@ -23,7 +23,7 @@ class UpdateTurns implements ShouldBroadcast
      */
     public function __construct($turns)
     {
-        $this->$turns = $turns;
+        $this->msg = $turns;
     }
 
     /**
