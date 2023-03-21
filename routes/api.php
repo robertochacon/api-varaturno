@@ -5,6 +5,7 @@ use App\Http\Controllers\EntitiesController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TurnsController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PatientsController;
 use Illuminate\Http\Request;
 
 /*
@@ -54,3 +55,9 @@ Route::post('/users', [UserController::class, 'register']);
 Route::get('/users', [UserController::class, 'index']);
 Route::post('/users/update/{id}/', [UserController::class, 'update']);
 Route::post('/users/delete/{id}/', [UserController::class, 'delete']);
+
+//patients
+Route::post('/patients', [PatientsController::class, 'register']);
+Route::get('/patients', [PatientsController::class, 'index']);
+Route::post('/patients/update/{id}/', [PatientsController::class, 'update']);
+Route::post('/patients/delete/{id}/', [PatientsController::class, 'delete']);
