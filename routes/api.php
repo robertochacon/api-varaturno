@@ -55,6 +55,7 @@ Route::post('/users', [UserController::class, 'register']);
 Route::get('/users', [UserController::class, 'index']);
 Route::post('/users/update/{id}/', [UserController::class, 'update']);
 Route::post('/users/delete/{id}/', [UserController::class, 'delete']);
+Route::post('/users/reset_password/{id}/', [UserController::class, 'reset_password']);
 
 //patients
 Route::post('/patients', [PatientsController::class, 'register']);
