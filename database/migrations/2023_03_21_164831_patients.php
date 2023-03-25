@@ -23,7 +23,8 @@ class Patients extends Migration
             $table->string('address')->nullable();
             $table->integer('service_id')->nullable();
             $table->string('service')->nullable();
-            $table->enum('status',['process','done','cancel'])->default('process');
+            $table->string('position')->nullable();
+            $table->enum('status',['process','call','done','cancel'])->default('process');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -10,7 +10,7 @@ class Patients extends Model
     protected $table = 'patients';
 
     protected $fillable = [
-        'entity_id', 'name', 'identification', 'phone','age','address','service_id','service','role',
+        'entity_id', 'name', 'identification', 'phone','age','address','service_id','service','role','position','status'
     ];
 
     public function entity()
