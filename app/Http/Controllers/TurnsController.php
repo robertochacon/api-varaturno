@@ -10,7 +10,7 @@ class TurnsController extends Controller
 {
     public function index()
     {
-        $turns = Turns::orderBy('id', 'DESC')->get();
+        $turns = Turns::orderBy('id', 'ASC')->get();
         return response()->json(["data"=>$turns],200);
     }
 

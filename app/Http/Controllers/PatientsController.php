@@ -9,7 +9,7 @@ class PatientsController extends Controller
 {
     public function index()
     {
-        $patients = Patients::with('entity')->orderBy('id', 'DESC')->get();
+        $patients = Patients::with('entity')->orderBy('id', 'ASC')->get();
         return response()->json(["data"=>$patients],200);
     }
 
