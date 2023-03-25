@@ -19,46 +19,46 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::post('/register/', [AuthController::class, 'register']);
-Route::post('/login/', [AuthController::class, 'login']);
-Route::post('/refresh/', [AuthController::class, 'refresh']);
+Route::post('/register/', [AuthController::class, 'register'])->middleware('cors');;
+Route::post('/login/', [AuthController::class, 'login'])->middleware('cors');
+Route::post('/refresh/', [AuthController::class, 'refresh'])->middleware('cors');
 
 //home
-Route::get('/home/', [HomeController::class, 'index']);
-Route::get('/home/entity/{entity}', [HomeController::class, 'all']);
+Route::get('/home/', [HomeController::class, 'index'])->middleware('cors');
+Route::get('/home/entity/{entity}', [HomeController::class, 'all'])->middleware('cors');
 
 //entitys
-Route::get('/entities/', [EntitiesController::class, 'index']);
-Route::get('/entities/{id}/', [EntitiesController::class, 'watch']);
-Route::post('/entities/', [EntitiesController::class, 'register']);
-Route::post('/entities/update/{id}/', [EntitiesController::class, 'update']);
-Route::post('/entities/delete/{id}/', [EntitiesController::class, 'delete']);
+Route::get('/entities/', [EntitiesController::class, 'index'])->middleware('cors');
+Route::get('/entities/{id}/', [EntitiesController::class, 'watch'])->middleware('cors');
+Route::post('/entities/', [EntitiesController::class, 'register'])->middleware('cors');
+Route::post('/entities/update/{id}/', [EntitiesController::class, 'update'])->middleware('cors');
+Route::post('/entities/delete/{id}/', [EntitiesController::class, 'delete'])->middleware('cors');
 
 //documents
-Route::get('/services/', [ServicesController::class, 'index']);
-Route::get('/services/entity/{entity}', [ServicesController::class, 'all']);
-Route::get('/services/{identification}/', [ServicesController::class, 'watch']);
-Route::post('/services/', [ServicesController::class, 'register']);
-Route::post('/services/update/{id}/', [ServicesController::class, 'update']);
-Route::post('/services/delete/{id}/', [ServicesController::class, 'delete']);
+Route::get('/services/', [ServicesController::class, 'index'])->middleware('cors');
+Route::get('/services/entity/{entity}', [ServicesController::class, 'all'])->middleware('cors');
+Route::get('/services/{identification}/', [ServicesController::class, 'watch'])->middleware('cors');
+Route::post('/services/', [ServicesController::class, 'register'])->middleware('cors');
+Route::post('/services/update/{id}/', [ServicesController::class, 'update'])->middleware('cors');
+Route::post('/services/delete/{id}/', [ServicesController::class, 'delete'])->middleware('cors');
 
 //turns
-Route::get('/turns/', [TurnsController::class, 'index']);
-Route::get('/turns/{id}/', [TurnsController::class, 'watch']);
-Route::post('/turns/', [TurnsController::class, 'register']);
-Route::post('/turns/update/{id}/', [TurnsController::class, 'update']);
-Route::post('/turns/delete/{id}/', [TurnsController::class, 'delete']);
+Route::get('/turns/', [TurnsController::class, 'index'])->middleware('cors');
+Route::get('/turns/{id}/', [TurnsController::class, 'watch'])->middleware('cors');
+Route::post('/turns/', [TurnsController::class, 'register'])->middleware('cors');
+Route::post('/turns/update/{id}/', [TurnsController::class, 'update'])->middleware('cors');
+Route::post('/turns/delete/{id}/', [TurnsController::class, 'delete'])->middleware('cors');
 
 //users
-Route::get('/profile', [UserController::class, 'userProfile']);
-Route::post('/users', [UserController::class, 'register']);
-Route::get('/users', [UserController::class, 'index']);
-Route::post('/users/update/{id}/', [UserController::class, 'update']);
-Route::post('/users/delete/{id}/', [UserController::class, 'delete']);
-Route::post('/users/reset_password/{id}/', [UserController::class, 'reset_password']);
+Route::get('/profile', [UserController::class, 'userProfile'])->middleware('cors');
+Route::post('/users', [UserController::class, 'register'])->middleware('cors');
+Route::get('/users', [UserController::class, 'index'])->middleware('cors');
+Route::post('/users/update/{id}/', [UserController::class, 'update'])->middleware('cors');
+Route::post('/users/delete/{id}/', [UserController::class, 'delete'])->middleware('cors');
+Route::post('/users/reset_password/{id}/', [UserController::class, 'reset_password'])->middleware('cors');
 
 //patients
-Route::post('/patients', [PatientsController::class, 'register']);
-Route::get('/patients', [PatientsController::class, 'index']);
-Route::post('/patients/update/{id}/', [PatientsController::class, 'update']);
-Route::post('/patients/delete/{id}/', [PatientsController::class, 'delete']);
+Route::post('/patients', [PatientsController::class, 'register'])->middleware('cors');
+Route::get('/patients', [PatientsController::class, 'index'])->middleware('cors');
+Route::post('/patients/update/{id}/', [PatientsController::class, 'update'])->middleware('cors');
+Route::post('/patients/delete/{id}/', [PatientsController::class, 'delete'])->middleware('cors');
