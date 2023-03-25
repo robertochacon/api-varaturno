@@ -58,7 +58,7 @@ Route::post('/users/delete/{id}/', [UserController::class, 'delete']);
 Route::post('/users/reset_password/{id}/', [UserController::class, 'reset_password']);
 
 //patients
-Route::post('/person', [PatientsController::class, 'register']);
-Route::get('/persons', [PatientsController::class, 'index']);
-Route::post('/person/update/{id}/', [PatientsController::class, 'update']);
-Route::post('/person/delete/{id}/', [PatientsController::class, 'delete']);
+Route::post('/patients', [PatientsController::class, 'register']);
+Route::get('/patients', [PatientsController::class, 'index']);
+Route::post('/patients/update/{id}/', [PatientsController::class, 'update']);
+Route::post('/patients/delete/{id}/', [PatientsController::class, 'delete']);
