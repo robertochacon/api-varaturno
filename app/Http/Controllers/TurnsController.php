@@ -31,7 +31,8 @@ class TurnsController extends Controller
             $turns->logo = $path;
          }
         $turns->save();
-        event(new UpdateTurns('register'));
+        $msg = 'register_turn';
+        event(new UpdateTurns($msg));
         return response()->json(["data"=>$turns],200);
     }
 
@@ -42,7 +43,7 @@ class TurnsController extends Controller
             if($turn->status == 'call'){
                 $msg = ['turno'=>$turn->code.$turn->id,'puesto'=>$turn->window];
             }else{
-                $msg = 'update';
+                $msg = 'update_turn';
             }
             event(new UpdateTurns($msg));
             return response()->json(["data"=>"ok"],200);
@@ -54,7 +55,8 @@ class TurnsController extends Controller
     public function delete($id){
         try{
             $turn = Turns::destroy($id);
-            event(new UpdateTurns(['turno'=>$turn->code.$turn->id,'puesto'=>$turn->window]));
+            $msg = 'delete_turn';
+            event(new UpdateTurns($msg));
             return response()->json(["data"=>"ok"],200);
         }catch (Exception $e) {
             return response()->json(["data"=>"none"],200);
