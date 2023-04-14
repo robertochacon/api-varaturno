@@ -45,7 +45,6 @@ class TurnsController extends Controller
                 $turn->update($request->all());
                 $msg = ['action'=>'update_turn'];
             }
-            $msg = 'update_turn';
             event(new UpdateTurns($msg));
             return response()->json(["data"=>"ok"],200);
         }catch (Exception $e) {
