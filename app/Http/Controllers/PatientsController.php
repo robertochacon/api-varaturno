@@ -31,7 +31,11 @@ class PatientsController extends Controller
         try{
             $patient = Patients::find($id);
             $patient->update($request->all());
-            $msg = 'update_patient';
+            if($patient->status == 'call'){
+                $msg = ['action'=>'call_patient','patient'=>$patient->name];
+            }else{
+                $msg = ['action'=>'update_patient'];
+            }
             event(new UpdateTurns($msg));
             return response()->json(["data"=>"ok"],200);
         }catch (Exception $e) {
