@@ -40,11 +40,12 @@ class TurnsController extends Controller
         try{
             $turn = Turns::find($id);
             $turn->update($request->all());
-            if($turn->status == 'call'){
-                $msg = ['turno'=>$turn->code.$turn->id,'puesto'=>$turn->window];
-            }else{
-                $msg = 'update_turn';
-            }
+            // if($turn->status == 'call'){
+            //     $msg = ['turno'=>$turn->code.$turn->id,'puesto'=>$turn->window];
+            // }else{
+            //     $msg = 'update_turn';
+            // }
+            $msg = 'update_turn';
             event(new UpdateTurns($msg));
             return response()->json(["data"=>"ok"],200);
         }catch (Exception $e) {
