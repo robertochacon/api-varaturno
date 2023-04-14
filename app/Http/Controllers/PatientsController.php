@@ -30,10 +30,10 @@ class PatientsController extends Controller
     public function update(Request $request, $id){
         try{
             $patient = Patients::find($id);
-            $patient->update($request->all());
-            if($patient->status == 'call'){
+            if($patient->status == 'call_patient'){
                 $msg = ['action'=>'call_patient','patient'=>$patient->name];
             }else{
+                $patient->update($request->all());
                 $msg = ['action'=>'update_patient'];
             }
             event(new UpdateTurns($msg));

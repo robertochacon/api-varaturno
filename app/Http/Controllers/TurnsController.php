@@ -39,10 +39,10 @@ class TurnsController extends Controller
     public function update(Request $request, $id){
         try{
             $turn = Turns::find($id);
-            $turn->update($request->all());
-            if($turn->status == 'call'){
+            if($turn->status == 'call_turn'){
                 $msg = ['action'=>'call_turn','turn'=>$turn->code.$turn->id,'puesto'=>$turn->window];
             }else{
+                $turn->update($request->all());
                 $msg = ['action'=>'update_turn'];
             }
             $msg = 'update_turn';
