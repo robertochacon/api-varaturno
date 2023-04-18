@@ -17,7 +17,7 @@ class Patients extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('entity_id')->nullable();
             $table->string('name');
-            $table->string('identification')->unique();
+            $table->string('identification')();
             $table->string('phone')->nullable();
             $table->string('age')->nullable();
             $table->string('address')->nullable();
