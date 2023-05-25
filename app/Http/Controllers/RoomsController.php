@@ -22,7 +22,7 @@ class RoomsController extends Controller
 
     public function register(Request $request)
     {
-        $room = new Room(request()->all());
+        $room = new Rooms(request()->all());
         $room->save();
         return response()->json(["data"=>$room],200);
     }

@@ -22,7 +22,7 @@ class AreasController extends Controller
 
     public function register(Request $request)
     {
-        $area = new Room(request()->all());
+        $area = new Areas(request()->all());
         $area->save();
         return response()->json(["data"=>$area],200);
     }

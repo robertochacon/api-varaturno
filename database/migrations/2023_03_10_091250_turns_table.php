@@ -19,12 +19,14 @@ class TurnsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('entity_id')->nullable();
             $table->foreign('entity_id')->references('id')->on('entities');
+            $table->unsignedBigInteger('area_id')->nullable();
+            $table->foreign('area_id')->references('id')->on('areas');
+            $table->unsignedBigInteger('room_id')->nullable();
+            $table->foreign('room_id')->references('id')->on('rooms');
             $table->string('identification')->nullable();
             $table->string('code')->nullable();
             $table->string('service')->nullable();
             $table->string('note')->nullable();
-            $table->string('area')->nullable();
-            $table->string('room')->nullable();
             $table->string('window')->default('1')->nullable();
             $table->enum('status',['call','wait','done','cancel'])->default('wait');
             $table->timestamps();
