@@ -39,12 +39,6 @@ class ServicesController extends Controller
             Storage::disk('local')->put("public/{$path}", file_get_contents($request->file));
             $services->file = $path;
          }
-        // if ($request->hasFile('file')) {
-        //     $temp = file_get_contents($request->file('file'));
-        //     $services->file = base64_encode($temp);
-        //     // $path = $request->file('file')->store('/public/documents');
-        //     // $services->file = $path;
-        //  }
         $services->save();
         return response()->json(["data"=>$services],200);
     }

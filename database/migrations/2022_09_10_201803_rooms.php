@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TurnsTable extends Migration
+class Rooms extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,15 @@ class TurnsTable extends Migration
      */
     public function up()
     {
-        Schema::create('turns', function (Blueprint $table) {
+        Schema::create('rooms', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('entity_id')->nullable();
             $table->foreign('entity_id')->references('id')->on('entities');
-            $table->string('identification')->nullable();
-            $table->string('code')->nullable();
-            $table->string('service')->nullable();
-            $table->string('note')->nullable();
-            $table->string('area')->nullable();
-            $table->string('room')->nullable();
-            $table->string('window')->default('1')->nullable();
-            $table->enum('status',['call','wait','done','cancel'])->default('wait');
+            $table->string('name')->nullable();
+            $table->string('description')->nullable();
+            $table->enum('status',['active','inactive'])->default('active');
             $table->timestamps();
         });
     }
@@ -38,6 +33,6 @@ class TurnsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('turns');
+        Schema::dropIfExists('rooms');
     }
 }

@@ -2,6 +2,8 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EntitiesController;
+use App\Http\Controllers\AreasController;
+use App\Http\Controllers\RoomsController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TurnsController;
 use App\Http\Controllers\UserController;
@@ -34,7 +36,21 @@ Route::post('/entities/', [EntitiesController::class, 'register'])->middleware('
 Route::post('/entities/update/{id}/', [EntitiesController::class, 'update'])->middleware('cors');
 Route::post('/entities/delete/{id}/', [EntitiesController::class, 'delete'])->middleware('cors');
 
-//documents
+//rooms
+Route::get('/rooms/', [RoomsController::class, 'index'])->middleware('cors');
+Route::get('/rooms/entity/{entity}', [RoomsController::class, 'all'])->middleware('cors');
+Route::post('/rooms/', [RoomsController::class, 'register'])->middleware('cors');
+Route::post('/rooms/update/{id}/', [RoomsController::class, 'update'])->middleware('cors');
+Route::post('/rooms/delete/{id}/', [RoomsController::class, 'delete'])->middleware('cors');
+
+//areas
+Route::get('/areas/', [AreasController::class, 'index'])->middleware('cors');
+Route::get('/areas/entity/{entity}', [AreasController::class, 'all'])->middleware('cors');
+Route::post('/areas/', [AreasController::class, 'register'])->middleware('cors');
+Route::post('/areas/update/{id}/', [AreasController::class, 'update'])->middleware('cors');
+Route::post('/areas/delete/{id}/', [AreasController::class, 'delete'])->middleware('cors');
+
+//services
 Route::get('/services/', [ServicesController::class, 'index'])->middleware('cors');
 Route::get('/services/entity/{entity}', [ServicesController::class, 'all'])->middleware('cors');
 Route::get('/services/{identification}/', [ServicesController::class, 'watch'])->middleware('cors');
