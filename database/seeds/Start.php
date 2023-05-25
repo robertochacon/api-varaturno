@@ -13,17 +13,31 @@ class Start extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            ['entity_id' => 1,'name' => 'Leuesky V. U.','identification' => '06800547348','password' => bcrypt('lcr123'),'role' => 'admin'],
-            ['entity_id' => 1,'name' => 'Angelo C. R.','identification' => '06800315365','password' => bcrypt('lcr123'),'role' => 'admin'],
             ['entity_id' => 1,'name' => 'Administrador','identification' => '12345','password' => bcrypt('12345'),'role' => 'admin'],
             ['entity_id' => 1,'name' => 'Super admin','identification' => '123456','password' => bcrypt('123456'),'role' => 'super_admin']
         ]);
 
         DB::table('entities')->insert([
             'user_id' => 1,
-            'name' => 'Start',
-            'description' => 'start description',
+            'name' => 'Varaturno',
+            'description' => 'Varaturno',
             'windows' => '5'
+        ]);
+
+        DB::table('areas')->insert([
+            ['entity_id' => 1,'name' => 'Laboratorio','description' => 'Laboratorio'],
+            ['entity_id' => 1,'name' => 'Imagenes','description' => 'Imagenes'],
+            ['entity_id' => 1,'name' => 'Consultas','description' => 'Consultas'],
+        ]);
+
+        DB::table('rooms')->insert([
+            ['entity_id' => 1,'name' => 'Sala 1','description' => 'Sala 1'],
+            ['entity_id' => 1,'name' => 'Sala 2','description' => 'Sala 2'],
+            ['entity_id' => 1,'name' => 'Sala 3','description' => 'Sala 3'],
+            ['entity_id' => 1,'name' => 'Sala 4','description' => 'Sala 4'],
+            ['entity_id' => 1,'name' => 'Sala 5','description' => 'Sala 5'],
+            ['entity_id' => 1,'name' => 'Sala 6','description' => 'Sala 6'],
+            ['entity_id' => 1,'name' => 'Sala 7','description' => 'Sala 7'],
         ]);
 
         DB::table('services')->insert([
